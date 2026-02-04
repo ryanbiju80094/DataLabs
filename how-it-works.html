@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — DataLabs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="page-how-it-works">
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">DataLabs</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="how-it-works.html" class="nav-link active">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section hero-section">
+            <div class="wrap">
+                <h1 class="hero-title">From raw video to machine-readable reality.</h1>
+                <!-- The Problem -->
+                <div class="block block-text">
+                    <h3 class="block-heading">The Problem</h3>
+                    <p>More video is not more insight. More simulation is not more reality. More labeling is not more intelligence. As AI moves from the digital screen to the physical world, we have hit a data wall. We are drowning in raw pixels but starving for structured truth. To teach machines to navigate our world, we must move beyond the limits of current data collection.</p>
+                    <ul class="problem-list">
+                        <li><strong>Raw Video is Unstructured Noise</strong>: Raw video is just a stream of pixels. It lacks the granular, machine-readable structure AI needs to actually "understand" physical interactions.</li>
+                        <li><strong>The Simulation Paradox</strong>: Simulated environments are bounded by their creators. They consistently fail to capture the "entropy"—the messy, unpredictable edge cases of the real world.</li>
+                        <li><strong>Scaling Bottleneck</strong>: Human-in-the-loop labeling cannot keep pace with the exponential data demands of physical AI. It is too slow, too expensive, and physically impossible to scale to the petabytes required for world-class models.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="section content-section">
+            <div class="wrap">
+                <!-- Our Solution -->
+                <div class="block block-text">
+                    <h3 class="block-heading">Our Solution</h3>
+                    <p>DataLabs delivers Reality-as-a-Service: we curate massive publicly available video datasets (like creator approved videos on Youtube), run our AI pipeline to parse physical interactions and structure every frame, and output rich schemas—object tracking, actions, causal links, depth, and embeddings. One pipeline from public video to training-ready data.</p>
+                </div>
+
+                <!-- 3-step pipeline flow -->
+                <div class="block">
+                    <div class="solution-flow">
+                        <div class="solution-step">
+                            <h4>Video Acquisition</h4>
+                            <p>We source and curate massive public video datasets (like creator approved videos on Youtube) spanning diverse real-world settings and use cases.</p>
+                        </div>
+                        <span class="solution-arrow" aria-hidden="true"></span>
+                        <div class="solution-step">
+                            <h4>AI Pipeline</h4>
+                            <p>Our pipeline parses each video into objects, actions, causal relationships, and temporal structure.</p>
+                        </div>
+                        <span class="solution-arrow" aria-hidden="true"></span>
+                        <div class="solution-step">
+                            <h4>Schema Generation</h4>
+                            <p>Every frame becomes a machine-readable schema: visual, audio, physical, semantic.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The AI Pipeline: accordion list of outputs -->
+                <div class="block">
+                    <h3 class="block-heading">The AI Pipeline</h3>
+                    <p class="block-p">Our pipeline turns raw video into training-ready datasets at scale. Every run produces a full stack of structured signals—from legal and technical metadata through to pre-computed depth, causal graphs, and embeddings. We are building the data layer for physical world models: one automated conversion from public video to rich, machine-readable reality. Each dataset is designed for research and production use, with consistent schemas and provenance so you can train, evaluate, and deploy with confidence.</p>
+                    <ul class="output-accordion" role="list">
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-manifest" id="out-manifest-btn">
+                                <span class="output-accordion-title">Manifest & metadata</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-manifest" role="region" aria-labelledby="out-manifest-btn" hidden>
+                                <p>Legal, technical, and scene-level metadata for every dataset and clip. Enables compliance, reproducibility, and downstream filtering. Each asset is documented with provenance, license, and context so researchers and engineers can trust and trace the data at scale.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-schema" id="out-schema-btn">
+                                <span class="output-accordion-title">Schema & ontology</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-schema" role="region" aria-labelledby="out-schema-btn" hidden>
+                                <p>Unified definitions and relationships for objects and concepts across datasets. A shared vocabulary and hierarchy so models see consistent semantics. Enables transfer learning, cross-domain reasoning, and alignment with downstream task ontologies.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-task" id="out-task-btn">
+                                <span class="output-accordion-title">Task segmentation</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-task" role="region" aria-labelledby="out-task-btn" hidden>
+                                <p>Hierarchical breakdown of tasks and steps in each video. Enables goal-conditioned learning and evaluation of procedural understanding. Every clip is decomposed into high-level goals and fine-grained steps for training and benchmarking.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-transcripts" id="out-transcripts-btn">
+                                <span class="output-accordion-title">Transcripts & entity linking</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-transcripts" role="region" aria-labelledby="out-transcripts-btn" hidden>
+                                <p>Speech-to-text with entities linked to the ontology. Grounds language in the same semantic space as vision and action. Enables multimodal alignment, language-conditioned control, and joint audio-visual reasoning for physical world models.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-panoptic" id="out-panoptic-btn">
+                                <span class="output-accordion-title">Panoptic masks</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-panoptic" role="region" aria-labelledby="out-panoptic-btn" hidden>
+                                <p>Per-pixel segmentation of objects and background in a single representation. Instance and semantic labels unified for scene understanding, occlusion reasoning, and pixel-level supervision. Enables dense prediction and spatial reasoning at scale.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-tracking" id="out-tracking-btn">
+                                <span class="output-accordion-title">Object tracking</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-tracking" role="region" aria-labelledby="out-tracking-btn" hidden>
+                                <p>Consistent object IDs across frames over time. Enables temporal reasoning and causal attribution. Every entity is tracked so models can learn persistence, interaction, and dynamics over long horizons—critical for physical world understanding.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-actions" id="out-actions-btn">
+                                <span class="output-accordion-title">Action events</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-actions" role="region" aria-labelledby="out-actions-btn" hidden>
+                                <p>Structured who-did-what-to-whom with temporal extent and outcome. Agent-Action-Object-Result tuples for action recognition, affordance learning, and causal inference. Rich supervision for training models that reason about physical interactions.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-causal" id="out-causal-btn">
+                                <span class="output-accordion-title">Causal graphs & DAGs</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-causal" role="region" aria-labelledby="out-causal-btn" hidden>
+                                <p>Logical dependencies between events as directed graphs. Enables counterfactual reasoning and planning. The pipeline infers cause-effect structure so models can reason about what would happen if—essential for safe and robust physical AI.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-cot" id="out-cot-btn">
+                                <span class="output-accordion-title">Chain-of-thought & counterfactuals</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-cot" role="region" aria-labelledby="out-cot-btn" hidden>
+                                <p>Reasoning traces and what-if Q&A over the video. Enables interpretability and robust decision-making. We surface the reasoning behind key events and alternative outcomes so models can learn to explain and generalize.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-depth" id="out-depth-btn">
+                                <span class="output-accordion-title">Metric depth</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-depth" role="region" aria-labelledby="out-depth-btn" hidden>
+                                <p>Per-pixel metric depth with confidence per frame. Enables 3D reasoning and spatial planning. Every frame gets a calibrated depth map so models understand scale, layout, and geometry—without simulators or manual annotation.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-flow" id="out-flow-btn">
+                                <span class="output-accordion-title">Optical flow</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-flow" role="region" aria-labelledby="out-flow-btn" hidden>
+                                <p>Dense motion between consecutive frames. Enables dynamics prediction and temporal consistency. Motion fields support video understanding, physics-inspired learning, and action-conditioned generation at scale.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-camera" id="out-camera-btn">
+                                <span class="output-accordion-title">Camera intrinsics</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-camera" role="region" aria-labelledby="out-camera-btn" hidden>
+                                <p>Intrinsics and extrinsics for 3D reasoning and multi-view fusion. Enables metric reconstruction and geometric tasks. Each sequence is calibrated so models can reason in 3D and combine views consistently.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-visual" id="out-visual-btn">
+                                <span class="output-accordion-title">Visual embeddings</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-visual" role="region" aria-labelledby="out-visual-btn" hidden>
+                                <p>Pre-computed visual latents for downstream models. Enables fast iteration and transfer without recomputing features. Ready-to-use representations for training, evaluation, and retrieval—aligned with our schema and ontology.</p>
+                            </div>
+                        </li>
+                        <li class="output-accordion-item">
+                            <button type="button" class="output-accordion-trigger" aria-expanded="false" aria-controls="out-acoustic" id="out-acoustic-btn">
+                                <span class="output-accordion-title">Acoustic embeddings</span>
+                                <span class="output-accordion-icon" aria-hidden="true">↓</span>
+                            </button>
+                            <div class="output-accordion-panel" id="out-acoustic" role="region" aria-labelledby="out-acoustic-btn" hidden>
+                                <p>Pre-computed audio latents for downstream models. Enables multimodal fusion and audio-conditioned behavior. Aligned with our visual pipeline for joint audio-visual learning and physical world understanding.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Why DataLabs: bubble style -->
+                <div class="block">
+                    <h3 class="block-heading">Why DataLabs</h3>
+                    <div class="why-bubbles">
+                        <div class="why-bubble">
+                            <span class="why-bubble-label">Format</span>
+                            <p class="why-bubble-desc">Structured schemas and annotations, not raw video—so you skip months of preprocessing.</p>
+                        </div>
+                        <div class="why-bubble">
+                            <span class="why-bubble-label">Processing</span>
+                            <p class="why-bubble-desc">Automated conversion pipeline from public video to training-ready data.</p>
+                        </div>
+                        <div class="why-bubble">
+                            <span class="why-bubble-label">Depth & physics</span>
+                            <p class="why-bubble-desc">Depth maps, flow, and camera params—real-world fidelity simulators can't match.</p>
+                        </div>
+                        <div class="why-bubble">
+                            <span class="why-bubble-label">Causal structure</span>
+                            <p class="why-bubble-desc">Causal graphs and DAGs for counterfactual reasoning and planning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">DataLabs</a>
+                <p class="footer-tagline">Structured data for the physical world.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
