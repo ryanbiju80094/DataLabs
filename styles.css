@@ -20,6 +20,8 @@
   --radius: 4px;
   --radius-sm: 4px;
   --wrap: 1000px;
+  --space: 24px;
+  --space-section: 48px;
   --font-serif: "Lora", Georgia, "Times New Roman", serif;
   --font-sans: "DM Sans", Helvetica, Arial, sans-serif;
 }
@@ -39,7 +41,7 @@ body {
 .wrap {
   max-width: var(--wrap);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--space);
 }
 
 /* ——— Nav ——— */
@@ -57,7 +59,7 @@ body {
 .nav-inner {
   max-width: var(--wrap);
   margin: 0 auto;
-  padding: 20px 24px;
+  padding: var(--space);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -95,7 +97,7 @@ body {
 
 /* ——— Hero (Page 1) ——— */
 .hero-section {
-  padding: 140px 0 120px;
+  padding: 140px 0 var(--space-section);
   text-align: left;
   background: var(--bg);
 }
@@ -106,22 +108,15 @@ body {
   font-weight: 600;
   color: var(--text);
   line-height: 1.3;
-  margin-bottom: 24px;
-}
-
-.hero-subtitle {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--text-muted);
-  margin-bottom: 24px;
+  margin-bottom: var(--space);
 }
 
 .hero-tagline-cta {
   display: flex;
   align-items: flex-start;
-  gap: 64px;
+  gap: var(--space-section);
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 /* Get in touch box aligned to right edge of wrap (same as header) */
@@ -131,22 +126,11 @@ body {
   margin-left: auto;
 }
 
-.hero-tagline-left {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex-shrink: 0;
-}
-
-.hero-tagline-cta .hero-subtitle {
-  margin-bottom: 0;
-}
-
 .hero-cta-block {
   width: 100%;
   min-width: 0;
   max-width: none;
-  padding: 28px 32px;
+  padding: var(--space);
   background: var(--bg-soft);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -157,13 +141,13 @@ body {
   font-size: 20px;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 14px;
+  margin-bottom: var(--space);
 }
 
 .hero-cta-block .cta-desc {
   font-size: 16px;
   color: var(--text-body);
-  margin-bottom: 24px;
+  margin-bottom: var(--space);
   line-height: 1.65;
 }
 
@@ -178,6 +162,7 @@ body {
 }
 
 .hero-cta-block .cta-contact-info {
+  margin-left: auto;
   font-size: 15px;
   color: var(--text-muted);
   line-height: 1.5;
@@ -193,8 +178,11 @@ body {
 }
 
 .hero-cta-actions {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
+}
+
+.hero-cta-actions--overview {
+  padding-top: 0;
 }
 
 .hero-cta-actions .btn-outline {
@@ -220,16 +208,24 @@ body {
 
 .hero-desc-row {
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
-  gap: 40px;
+  gap: var(--space-section);
   margin-bottom: 0;
   flex-wrap: wrap;
 }
 
-.hero-desc {
+.hero-desc-left {
   flex: 1;
   min-width: 0;
   max-width: 720px;
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+}
+
+.hero-desc {
   margin: 0;
   font-size: 20px;
   font-weight: 400;
@@ -241,6 +237,7 @@ body {
   flex: 0 0 45%;
   min-width: 220px;
   max-width: 100%;
+  order: 2;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -403,17 +400,17 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
 
 /* ——— Page 2 ——— */
 .content-section {
-  padding: 100px 0 120px;
+  padding: var(--space-section) 0;
   background: var(--bg);
 }
 
-/* Match gap between The Problem and Our Solution to block spacing (56px) */
+/* Match gap between The Problem and Our Solution to block spacing */
 .hero-section:has(+ .content-section) {
   padding-bottom: 0;
 }
 
 .hero-section + .content-section {
-  padding-top: 56px;
+  padding-top: var(--space-section);
 }
 
 .section-label {
@@ -429,10 +426,10 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 16px;
+  gap: var(--space);
   flex-wrap: wrap;
-  margin-bottom: 56px;
-  padding-left: 20px;
+  margin-bottom: var(--space-section);
+  padding-left: var(--space);
   border-left: 2px solid var(--border);
 }
 
@@ -459,7 +456,7 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
 }
 
 .block {
-  margin-bottom: 56px;
+  margin-bottom: var(--space-section);
 }
 
 .block:last-child {
@@ -471,13 +468,13 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
   font-size: 22px;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 16px;
+  margin-bottom: var(--space);
 }
 
 .block-p {
   font-size: 17px;
   color: var(--text-body);
-  margin-bottom: 18px;
+  margin-bottom: var(--space);
   line-height: 1.7;
 }
 
@@ -539,7 +536,7 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
 }
 
 .pillar {
-  padding: 24px;
+  padding: var(--space);
   border-radius: var(--radius);
   background: var(--bg-soft);
   border: 1px solid var(--border);
@@ -718,7 +715,7 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
 }
 
 .why-bubble {
-  padding: 24px;
+  padding: var(--space);
   border-radius: 24px;
   background: var(--bg-soft);
   border: 1px solid var(--border);
@@ -918,7 +915,7 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
 /* ——— Footer ——— */
 .footer {
   border-top: 1px solid var(--border);
-  padding: 24px 0 16px;
+  padding: var(--space) 0;
   background: var(--bg);
   font-family: var(--font-sans);
 }
@@ -977,8 +974,8 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
 
 .footer-copy {
   max-width: var(--wrap);
-  margin: 16px auto 0;
-  padding: 0 24px;
+  margin: var(--space) auto 0;
+  padding: 0 var(--space);
   font-size: 11px;
   color: var(--text-muted);
   text-align: center;
@@ -1031,13 +1028,19 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
 @media (max-width: 768px) {
   .hero-desc-row {
     flex-direction: column;
-    gap: 24px;
+    gap: var(--space);
+  }
+
+  /* Overview button appears directly below description, above image */
+  .hero-desc-left {
+    order: 1;
   }
 
   .hero-desc-image {
     flex: 0 0 auto;
     width: 100%;
     min-width: 0;
+    order: 2;
   }
 }
 
@@ -1061,15 +1064,15 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
 
 @media (max-width: 480px) {
   .wrap {
-    padding: 0 16px;
+    padding: 0 var(--space);
   }
 
   .nav-inner {
-    padding: 14px 16px;
+    padding: var(--space);
   }
 
   .hero-section {
-    padding: 100px 0 60px;
+    padding: 100px 0 var(--space-section);
   }
 
   .hero-title {
@@ -1077,6 +1080,6 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
   }
 
   .content-section {
-    padding: 56px 0 72px;
+    padding: var(--space-section) 0;
   }
 }
