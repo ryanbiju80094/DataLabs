@@ -121,8 +121,8 @@ body {
 
 /* Get in touch box aligned to right edge of wrap (same as header) */
 .hero-cta-wrap {
-  flex: 0 0 45%;
-  min-width: 220px;
+  flex: 0 0 52%;
+  min-width: 480px;
   margin-left: auto;
 }
 
@@ -153,16 +153,23 @@ body {
 
 .hero-cta-block .cta-contact-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: 20px 24px;
+  gap: 0;
   margin-top: 0;
   padding-top: 0;
   border-top: none;
 }
 
+.hero-cta-block .cta-contact-row .btn {
+  flex-shrink: 0;
+}
+
 .hero-cta-block .cta-contact-info {
-  margin-left: auto;
+  flex: 0 1 auto;
+  padding-left: 28px;
+  margin-left: 28px;
+  border-left: 1px solid var(--border);
   font-size: 15px;
   color: var(--text-muted);
   line-height: 1.5;
@@ -300,7 +307,7 @@ body {
   color: var(--text);
 }
 
-body.page-how-it-works .nav-link[href*="how-it-works"] {
+body.page-overview .nav-link[href*="overview"] {
   color: var(--text);
 }
 
@@ -644,6 +651,15 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
   border-bottom: none;
 }
 
+/* Alternating row base: white / light gray */
+.output-accordion-item:nth-child(odd) .output-accordion-trigger {
+  background: #ffffff;
+}
+
+.output-accordion-item:nth-child(even) .output-accordion-trigger {
+  background: #f5f5f5;
+}
+
 .output-accordion-trigger {
   width: 100%;
   display: flex;
@@ -651,7 +667,6 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
   justify-content: space-between;
   gap: 16px;
   padding: 18px 20px;
-  background: var(--bg);
   border: none;
   cursor: pointer;
   font-family: var(--font-serif);
@@ -659,20 +674,27 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
   font-weight: 600;
   color: var(--text);
   text-align: left;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
-.output-accordion-trigger:hover {
-  background: var(--bg-soft);
+.output-accordion-item:nth-child(odd) .output-accordion-trigger:hover {
+  background: #f5f5f5;
 }
 
+.output-accordion-item:nth-child(even) .output-accordion-trigger:hover {
+  background: #ebebeb;
+}
+
+/* Expanded: soft dark gray, white text */
 .output-accordion-trigger[aria-expanded="true"] {
-  background: var(--bg-soft);
-  border-bottom: 1px solid var(--border);
+  background: #3d3d3d !important;
+  color: #ffffff;
+  border-bottom: 1px solid #3d3d3d;
 }
 
 .output-accordion-trigger[aria-expanded="true"] .output-accordion-icon {
   transform: rotate(180deg);
+  color: #ffffff;
 }
 
 .output-accordion-title {
@@ -685,12 +707,18 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
   font-size: 14px;
   font-weight: 500;
   color: var(--text-muted);
-  transition: transform 0.2s;
+  transition: transform 0.2s, color 0.2s;
 }
 
+/* Panel: white under expanded header, soft accent border */
 .output-accordion-panel {
   padding: 16px 20px 20px;
-  background: var(--bg-soft);
+  background: #ffffff;
+  border-left: 3px solid #3d3d3d;
+}
+
+.output-accordion-item:nth-child(even) .output-accordion-panel {
+  background: #fafafa;
 }
 
 .output-accordion-panel[hidden] {
@@ -1053,12 +1081,24 @@ body.page-how-it-works .nav-link[href*="how-it-works"] {
   .hero-cta-wrap {
     margin-left: 0;
     width: 100%;
+    min-width: 0;
   }
 
   .hero-cta-block {
     min-width: 0;
     max-width: none;
     margin-top: 0;
+  }
+
+  .hero-cta-block .cta-contact-row {
+    flex-wrap: wrap;
+  }
+
+  .hero-cta-block .cta-contact-info {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    margin-top: 12px;
   }
 }
 
