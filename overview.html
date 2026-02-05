@@ -75,7 +75,20 @@
                                 <span class="output-accordion-icon" aria-hidden="true">↓</span>
                             </button>
                             <div class="output-accordion-panel" id="out-actions" role="region" aria-labelledby="out-actions-btn">
-                                <p>Structured who-did-what-to-whom with temporal extent and outcome. Agent-Action-Object-Result tuples for action recognition, affordance learning, and causal inference. Rich supervision for training models that reason about physical interactions.</p>
+                                <div class="output-accordion-panel-inner">
+                                    <p class="output-accordion-panel-desc">Who did what to whom, when, and with what result. Each event is an agent–action–object–target tuple with timestamps, so you can train on physical interactions instead of guessing from pixels. Useful for affordance learning, action recognition, and causal attribution.</p>
+                                    <div class="output-accordion-panel-example">
+                                        <pre class="output-accordion-example-code"><code><span class="hl-punctuation">{</span>
+  <span class="hl-key">"event_id"</span><span class="hl-punctuation">: </span><span class="hl-string">"act_001"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"agent"</span><span class="hl-punctuation">: </span><span class="hl-string">"human_right_hand"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"action"</span><span class="hl-punctuation">: </span><span class="hl-string">"thermal_bridge_application"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"object"</span><span class="hl-punctuation">: </span><span class="hl-string">"obj_iron_01"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"target"</span><span class="hl-punctuation">: </span><span class="hl-string">"obj_pcb_01"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"start_ms"</span><span class="hl-punctuation">: </span><span class="hl-number">190400</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"end_ms"</span><span class="hl-punctuation">: </span><span class="hl-number">198200</span>
+<span class="hl-punctuation">}</span></code></pre>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li class="output-accordion-item">
@@ -84,7 +97,16 @@
                                 <span class="output-accordion-icon" aria-hidden="true">↓</span>
                             </button>
                             <div class="output-accordion-panel" id="out-camera" role="region" aria-labelledby="out-camera-btn">
-                                <p>Intrinsics and extrinsics for 3D reasoning and multi-view fusion. Enables metric reconstruction and geometric tasks. Each sequence is calibrated so models can reason in 3D and combine views consistently.</p>
+                                <div class="output-accordion-panel-inner">
+                                    <p class="output-accordion-panel-desc">Lens and camera pose for every frame. You get focal length, principal point, and distortion so models can recover 3D geometry and fuse multiple views without guessing. Handy for metric reconstruction and any task that needs real scale.</p>
+                                    <div class="output-accordion-panel-example">
+                                        <pre class="output-accordion-example-code"><code><span class="hl-key">"intrinsics"</span><span class="hl-punctuation">: {</span>
+  <span class="hl-key">"model"</span><span class="hl-punctuation">: </span><span class="hl-string">"pinhole"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"params"</span><span class="hl-punctuation">: { </span><span class="hl-key">"fx"</span><span class="hl-punctuation">: </span><span class="hl-number">1240.5</span><span class="hl-punctuation">, </span><span class="hl-key">"fy"</span><span class="hl-punctuation">: </span><span class="hl-number">1240.5</span><span class="hl-punctuation">,</span>
+             <span class="hl-key">"cx"</span><span class="hl-punctuation">: </span><span class="hl-number">960</span><span class="hl-punctuation">, </span><span class="hl-key">"cy"</span><span class="hl-punctuation">: </span><span class="hl-number">540</span> <span class="hl-punctuation">}</span>
+<span class="hl-punctuation">}</span></code></pre>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li class="output-accordion-item">
@@ -93,7 +115,15 @@
                                 <span class="output-accordion-icon" aria-hidden="true">↓</span>
                             </button>
                             <div class="output-accordion-panel" id="out-causal" role="region" aria-labelledby="out-causal-btn">
-                                <p>Logical dependencies between events as directed graphs. Enables counterfactual reasoning and planning. The pipeline infers cause-effect structure so models can reason about what would happen if, essential for safe and robust physical AI.</p>
+                                <div class="output-accordion-panel-inner">
+                                    <p class="output-accordion-panel-desc">Events and states as nodes, cause–effect links as edges. The pipeline outputs a DAG so you can train models to answer “what if?” and plan, not just recognize. Edges can be necessity or sufficiency, so you know what must happen before what.</p>
+                                    <div class="output-accordion-panel-example">
+                                        <pre class="output-accordion-example-code"><code><span class="hl-key">"nodes"</span><span class="hl-punctuation">: [{ </span><span class="hl-key">"id"</span><span class="hl-punctuation">: </span><span class="hl-string">"N1"</span><span class="hl-punctuation">, </span><span class="hl-key">"type"</span><span class="hl-punctuation">: </span><span class="hl-string">"action"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"label"</span><span class="hl-punctuation">: </span><span class="hl-string">"Flux Application"</span> <span class="hl-punctuation">}],</span>
+<span class="hl-key">"edges"</span><span class="hl-punctuation">: [{ </span><span class="hl-key">"from"</span><span class="hl-punctuation">: </span><span class="hl-string">"N1"</span><span class="hl-punctuation">, </span><span class="hl-key">"to"</span><span class="hl-punctuation">: </span><span class="hl-string">"N3"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"relation"</span><span class="hl-punctuation">: </span><span class="hl-string">"precondition"</span> <span class="hl-punctuation">}]</span></code></pre>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li class="output-accordion-item">
@@ -102,7 +132,16 @@
                                 <span class="output-accordion-icon" aria-hidden="true">↓</span>
                             </button>
                             <div class="output-accordion-panel" id="out-cot" role="region" aria-labelledby="out-cot-btn">
-                                <p>Reasoning traces and what-if Q&A over the video. Enables interpretability and robust decision-making. We surface the reasoning behind key events and alternative outcomes so models can learn to explain and generalize.</p>
+                                <div class="output-accordion-panel-inner">
+                                    <p class="output-accordion-panel-desc">Step-by-step reasoning and what-if questions tied to the video. We annotate why things happen and what would change if something else had happened, so models learn to explain and handle edge cases. Good for interpretability and robust decision-making.</p>
+                                    <div class="output-accordion-panel-example">
+                                        <pre class="output-accordion-example-code"><code><span class="hl-punctuation">{</span>
+  <span class="hl-key">"type"</span><span class="hl-punctuation">: </span><span class="hl-string">"counterfactual"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"question"</span><span class="hl-punctuation">: </span><span class="hl-string">"What if solder touched the iron first?"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"answer"</span><span class="hl-punctuation">: </span><span class="hl-string">"Would tin the tip but fail to wet the pad..."</span>
+<span class="hl-punctuation">}</span></code></pre>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li class="output-accordion-item">
@@ -111,7 +150,19 @@
                                 <span class="output-accordion-icon" aria-hidden="true">↓</span>
                             </button>
                             <div class="output-accordion-panel" id="out-manifest" role="region" aria-labelledby="out-manifest-btn">
-                                <p>Legal, technical, and scene-level metadata for every dataset and clip. Enables compliance, reproducibility, and downstream filtering. Each asset is documented with provenance, license, and context so researchers and engineers can trust and trace the data at scale.</p>
+                                <div class="output-accordion-panel-inner">
+                                    <p class="output-accordion-panel-desc">One place for license, checksums, resolution, and scene context. You can verify provenance, rerun experiments, and filter by legal or technical criteria without digging through raw files. Everything you need for compliance and reproducibility is in one manifest.</p>
+                                    <div class="output-accordion-panel-example">
+                                        <pre class="output-accordion-example-code"><code><span class="hl-key">"admin_and_legal"</span><span class="hl-punctuation">: {</span>
+  <span class="hl-key">"video_id"</span><span class="hl-punctuation">: </span><span class="hl-string">"skill.video_001"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"license_type"</span><span class="hl-punctuation">: </span><span class="hl-string">"CC-BY-4.0-Commercial"</span>
+<span class="hl-punctuation">},</span>
+<span class="hl-key">"technical_integrity"</span><span class="hl-punctuation">: {</span>
+  <span class="hl-key">"temporal"</span><span class="hl-punctuation">: { </span><span class="hl-key">"fps"</span><span class="hl-punctuation">: </span><span class="hl-number">60</span> <span class="hl-punctuation">},</span>
+  <span class="hl-key">"spatial"</span><span class="hl-punctuation">: { </span><span class="hl-key">"resolution"</span><span class="hl-punctuation">: [</span><span class="hl-number">1920</span><span class="hl-punctuation">, </span><span class="hl-number">1080</span><span class="hl-punctuation">] }</span>
+<span class="hl-punctuation">}</span></code></pre>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li class="output-accordion-item">
@@ -120,7 +171,16 @@
                                 <span class="output-accordion-icon" aria-hidden="true">↓</span>
                             </button>
                             <div class="output-accordion-panel" id="out-depth-flow" role="region" aria-labelledby="out-depth-flow-btn">
-                                <p>Per-pixel metric depth with confidence per frame, and dense motion between consecutive frames. Enables 3D reasoning, spatial planning, dynamics prediction, and temporal consistency. Depth and motion fields support video understanding and geometry without simulators or manual annotation.</p>
+                                <div class="output-accordion-panel-inner">
+                                    <p class="output-accordion-panel-desc">Metric depth (how far each pixel is) and optical flow (how it moves frame to frame), with confidence where needed. Real-world geometry and motion, no sim or hand labels. Depth is in meters; flow gives you dense motion for dynamics and temporal consistency.</p>
+                                    <div class="output-accordion-panel-example">
+                                        <pre class="output-accordion-example-code"><code><span class="hl-comment">// depth per pixel: [meters, confidence]</span>
+<span class="hl-punctuation">[[</span><span class="hl-number">0.45</span><span class="hl-punctuation">, </span><span class="hl-number">0.98</span><span class="hl-punctuation">], [</span><span class="hl-number">0.12</span><span class="hl-punctuation">, </span><span class="hl-number">0.92</span><span class="hl-punctuation">]]</span>
+
+<span class="hl-comment">// flow per frame</span>
+<span class="hl-punctuation">{ </span><span class="hl-key">"mean_magnitude"</span><span class="hl-punctuation">: </span><span class="hl-number">1.25</span><span class="hl-punctuation">, </span><span class="hl-key">"flow_entropy"</span><span class="hl-punctuation">: </span><span class="hl-number">0.45</span> <span class="hl-punctuation">}</span></code></pre>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li class="output-accordion-item">
@@ -129,7 +189,20 @@
                                 <span class="output-accordion-icon" aria-hidden="true">↓</span>
                             </button>
                             <div class="output-accordion-panel" id="out-panoptic" role="region" aria-labelledby="out-panoptic-btn">
-                                <p>Per-pixel segmentation of objects and background in a single representation, plus consistent object IDs across frames over time. Instance and semantic labels unified for scene understanding, occlusion reasoning, and pixel-level supervision. Enables dense prediction, spatial reasoning, and temporal reasoning so models can learn persistence, interaction, and dynamics over long horizons, critical for physical world understanding.</p>
+                                <div class="output-accordion-panel-inner">
+                                    <p class="output-accordion-panel-desc">Segmentation and tracking in one format: which pixels belong to which object, and the same ID across time. So models see who is where, when, and how they interact over the clip. Masks and bboxes at keyframes, with instance and semantic labels in a single representation.</p>
+                                    <div class="output-accordion-panel-example">
+                                        <pre class="output-accordion-example-code"><code><span class="hl-key">"dominant_objects"</span><span class="hl-punctuation">: [</span>
+  <span class="hl-punctuation">{ </span><span class="hl-key">"id"</span><span class="hl-punctuation">: </span><span class="hl-string">"obj_iron_01"</span><span class="hl-punctuation">, </span><span class="hl-key">"label"</span><span class="hl-punctuation">: </span><span class="hl-string">"soldering_iron"</span> <span class="hl-punctuation">},</span>
+  <span class="hl-punctuation">{ </span><span class="hl-key">"id"</span><span class="hl-punctuation">: </span><span class="hl-string">"obj_pcb_01"</span><span class="hl-punctuation">, </span><span class="hl-key">"label"</span><span class="hl-punctuation">: </span><span class="hl-string">"pcb"</span><span class="hl-punctuation">, </span><span class="hl-key">"static"</span><span class="hl-punctuation">: </span><span class="hl-bool">true</span> <span class="hl-punctuation">}</span>
+<span class="hl-punctuation">],</span>
+<span class="hl-key">"keyframes"</span><span class="hl-punctuation">: [{</span>
+  <span class="hl-key">"timestamp_ms"</span><span class="hl-punctuation">: </span><span class="hl-number">190400</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"objects"</span><span class="hl-punctuation">: [{ </span><span class="hl-key">"id"</span><span class="hl-punctuation">: </span><span class="hl-string">"obj_iron_01"</span><span class="hl-punctuation">,</span>
+    <span class="hl-key">"bbox"</span><span class="hl-punctuation">: [</span><span class="hl-number">0.42</span><span class="hl-punctuation">, </span><span class="hl-number">0.48</span><span class="hl-punctuation">, </span><span class="hl-number">0.08</span><span class="hl-punctuation">, </span><span class="hl-number">0.12</span><span class="hl-punctuation">] }]</span>
+<span class="hl-punctuation">}]</span></code></pre>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li class="output-accordion-item">
@@ -138,7 +211,19 @@
                                 <span class="output-accordion-icon" aria-hidden="true">↓</span>
                             </button>
                             <div class="output-accordion-panel" id="out-task" role="region" aria-labelledby="out-task-btn">
-                                <p>Hierarchical breakdown of tasks and steps in each video. Enables goal-conditioned learning and evaluation of procedural understanding. Every clip is decomposed into high-level goals and fine-grained steps for training and benchmarking.</p>
+                                <div class="output-accordion-panel-inner">
+                                    <p class="output-accordion-panel-desc">Videos cut into segments by phase (e.g. setup, execution) with short summaries and milestones. Use it for goal-conditioned training or to benchmark “did the model get the procedure?” Each segment has start/end times and a complexity score so you can sample or weight by difficulty.</p>
+                                    <div class="output-accordion-panel-example">
+                                        <pre class="output-accordion-example-code"><code><span class="hl-punctuation">{</span>
+  <span class="hl-key">"segment_id"</span><span class="hl-punctuation">: </span><span class="hl-string">"seg_001"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"type"</span><span class="hl-punctuation">: </span><span class="hl-string">"Preparation"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"task_phase"</span><span class="hl-punctuation">: </span><span class="hl-string">"Setup"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"summary"</span><span class="hl-punctuation">: </span><span class="hl-string">"Workspace organization and tool safety check."</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"start_time_ms"</span><span class="hl-punctuation">: </span><span class="hl-number">0</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"end_time_ms"</span><span class="hl-punctuation">: </span><span class="hl-number">45000</span>
+<span class="hl-punctuation">}</span></code></pre>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li class="output-accordion-item">
@@ -147,7 +232,18 @@
                                 <span class="output-accordion-icon" aria-hidden="true">↓</span>
                             </button>
                             <div class="output-accordion-panel" id="out-transcripts" role="region" aria-labelledby="out-transcripts-btn">
-                                <p>Speech-to-text with entities linked to the ontology. Grounds language in the same semantic space as vision and action. Enables multimodal alignment, language-conditioned control, and joint audio-visual reasoning for physical world models.</p>
+                                <div class="output-accordion-panel-inner">
+                                    <p class="output-accordion-panel-desc">Transcripts with timestamps, plus links from spoken words (e.g. “the tip”) to object IDs in the scene. Language and vision share the same vocabulary so you can train language-conditioned or audio–visual models. Optional acoustic events (clicks, clangs) are tagged where relevant.</p>
+                                    <div class="output-accordion-panel-example">
+                                        <pre class="output-accordion-example-code"><code><span class="hl-punctuation">{ </span><span class="hl-key">"utterance_id"</span><span class="hl-punctuation">: </span><span class="hl-string">"u_001"</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"text"</span><span class="hl-punctuation">: </span><span class="hl-string">"Place the tip so it touches the pad and lead."</span><span class="hl-punctuation">,</span>
+  <span class="hl-key">"start_ms"</span><span class="hl-punctuation">: </span><span class="hl-number">122000</span><span class="hl-punctuation">, </span><span class="hl-key">"end_ms"</span><span class="hl-punctuation">: </span><span class="hl-number">126500</span> <span class="hl-punctuation">},</span>
+<span class="hl-key">"entities"</span><span class="hl-punctuation">: [</span>
+  <span class="hl-punctuation">{ </span><span class="hl-key">"text"</span><span class="hl-punctuation">: </span><span class="hl-string">"tip"</span><span class="hl-punctuation">, </span><span class="hl-key">"object_id"</span><span class="hl-punctuation">: </span><span class="hl-string">"ID_001"</span> <span class="hl-punctuation">},</span>
+  <span class="hl-punctuation">{ </span><span class="hl-key">"text"</span><span class="hl-punctuation">: </span><span class="hl-string">"pad"</span><span class="hl-punctuation">, </span><span class="hl-key">"object_id"</span><span class="hl-punctuation">: </span><span class="hl-string">"ID_002"</span> <span class="hl-punctuation">}</span>
+<span class="hl-punctuation">]</span></code></pre>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li class="output-accordion-item">
@@ -156,7 +252,9 @@
                                 <span class="output-accordion-icon" aria-hidden="true">↓</span>
                             </button>
                             <div class="output-accordion-panel" id="out-embeddings" role="region" aria-labelledby="out-embeddings-btn">
-                                <p>Pre-computed visual and audio latents for downstream models. Enables fast iteration, transfer without recomputing features, multimodal fusion, and audio-conditioned behavior. Ready-to-use representations for training, evaluation, and retrieval, aligned with our pipeline for joint audio-visual learning and physical world understanding.</p>
+                                <div class="output-accordion-panel-inner">
+                                    <p class="output-accordion-panel-desc">Precomputed visual and audio vectors (e.g. SigLIP, CLAP) so you can skip feature extraction. Same pipeline, same schema—drop them into your trainer or retrieval stack and go. Visual is time-windowed (e.g. per second); audio is one vector per clip unless you ask otherwise.</p>
+                                </div>
                             </div>
                         </li>
                     </ul>
